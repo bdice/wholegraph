@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019-2023, NVIDIA CORPORATION.
+ * Copyright (c) 2019-2024, NVIDIA CORPORATION.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@
 #include <wholememory/env_func_ptrs.h>
 #include <wholememory/wholememory.h>
 
+#include "cuda_macros.hpp"
 #include "wholememory_ops/functions/gather_scatter_func.h"
 
 namespace wholememory_ops {
@@ -41,6 +42,7 @@ wholememory_error_code_t wholememory_scatter_mapped(
                       wholememory_desc,
                       stream,
                       scatter_sms);
+  WM_CUDA_CHECK(cudaStreamSynchronize(stream));
 }
 
 }  // namespace wholememory_ops
