@@ -1,5 +1,8 @@
 # WholeGraph
 
+> [!IMPORTANT]  
+> This repo is deprecated and replaced by https://github.com/rapidsai/cugraph-gnn
+
 WholeGraph is developed to help train large-scale Graph Neural Networks(GNN).
 WholeGraph provides underlying storage structure called WholeMemory.
 WholeMemory is a Tensor like storage and provide multi-GPU support.
